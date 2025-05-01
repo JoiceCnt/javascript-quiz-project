@@ -1,8 +1,14 @@
-class Quiz {
+class Quiz { 
     // YOUR CODE HERE:
-    //
-    // 1. constructor (questions, timeLimit, timeRemaining)
-
+    
+ constructor (questions, timeLimit, timeRemaining){
+  
+          this.questions = questions;
+          this.timeLimit = timeLimit;
+          this.timeremaining = timeremaining;
+          this.correctAnswers = 0;
+          this.currentQuestionIndex = 0;
+        }
     // 2. getQuestion()
     
     // 3. moveToNextQuestion()
