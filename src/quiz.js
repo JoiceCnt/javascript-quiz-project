@@ -38,6 +38,16 @@ class Quiz {
         }
     }
     filterQuestionsByDifficulty(difficulty){
-      
+    if (![1, 2, 3].includes(difficulty)) {
+            return; 
+          }
+            this.questions = this.questions.filter(q => q.difficulty === difficulty);
+          }
+        
+       
+      averageDifficulty() {
+        if (this.questions.length === 0) return 0;
+        const total = this.questions.reduce((sum, q) => sum + Number(q.difficulty), 0);
+        return total / this.questions.length;
+      }
     }
-}
