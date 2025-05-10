@@ -199,3 +199,15 @@ choiceElements.forEach(input=> {
   
 }
 });
+const restartButton = document.querySelector("#restartButton")
+restartButton.addEventListener("click", restartQuizHandler)
+function restartQuizHandler() {
+  endView.style.display = "none"
+   quizView.style.display = "block"
+    quiz.currentQuestionIndex = 0
+  quiz.correctAnswers = 0
+  quiz.shuffleQuestions()
+  showQuestion()
+
+}
+
