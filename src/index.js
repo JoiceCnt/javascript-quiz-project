@@ -184,9 +184,8 @@ choiceElements.forEach(input=> {
         
       }
 
-
-
-  function showResults() {
+}
+ function showResults() {
     clearInterval (timer);
     // YOUR CODE HERE:
     //
@@ -200,22 +199,25 @@ choiceElements.forEach(input=> {
      resultContainer.innerText = `You scored ${quiz.correctAnswers} out of ${quiz.questions.length} correct answers!`; // This value is hardcoded as a placeholder
   
 
-    }
-  
-}
+  }
+
+
+ 
+
+
 
 const restartButton = document.querySelector("#restartButton")
 restartButton.addEventListener("click", restartQuizHandler)
-function restartQuizHandler() {
-  endView.style.display = "none"
-   quizView.style.display = "block"
-    quiz.currentQuestionIndex = 0
-  quiz.correctAnswers = 0
-  quiz.shuffleQuestions()
-  showQuestion()
+// function restartQuizHandler() {
+//   endView.style.display = "none"
+//    quizView.style.display = "block"
+//     quiz.currentQuestionIndex = 0
+//   quiz.correctAnswers = 0
+//   quiz.shuffleQuestions()
+//   showQuestion()
 
-}
-
+// }
+//const quiz = new Quiz("#questions");
 startTimer();
 function startTimer(){
   timer = setInterval(() => {  
@@ -241,20 +243,20 @@ function restartQuizHandler(){
 
   const minutes = Math.floor (quiz.timeRemaining / 60).toString().padStart(2, "0");
   const seconds = (quiz.timeRemaining % 60).toString().padStart(2, "0");
-  const timeRemainingContainer = document.getElementById("timeRemaining");
+
   timeRemainingContainer.innerText = `${minutes}:${seconds}`;
 
   quiz.currentQuestionIndex = 0;
   quiz.correctAnswers = 0;
   quiz.shuffleQuestions()
 
-  endView.style.dislay = "none";
+  endView.style.display = "none";
   quizView.style.display = "block";
 
   showQuestion();
-
+ startTimer()
 }
-  startTimer();
-
-})
   
+
+
+  })
