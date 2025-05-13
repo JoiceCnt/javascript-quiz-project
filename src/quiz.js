@@ -22,7 +22,7 @@ class Quiz {
      }
 
      checkAnswer(answer){
-        if (this.answer === this.questions[this.currentQuestionIndex].answer){
+        if (answer === this.questions[this.currentQuestionIndex].answer){
 
            this.correctAnswers +=1
         }
